@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<title>Tweets to CSV</title>
-		<meta name="description" content="An utility for creating a CSV file from a Twitter timeline.">
+		<meta name="description" content="An utility for creating a CSV file from a Twitter user&rsquo;s timeline.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 		<meta name="robots" content="noindex">
 		<link rel="stylesheet" href="/assets/css/styles.css" type="text/css">
