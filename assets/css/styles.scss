@@ -1,0 +1,101 @@
+@import 'bourbon';
+@import 'reset';
+
+$colorTeal: #51BFAC;
+
+html,
+body {
+	background-color: #f7f7f7;
+	background-color: #FFF;
+	font-family: $helvetica;
+	color: #333;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+#container {
+	width: 380px;
+	border: 1px solid #D8D8D8;
+	border-top-width: 0px;
+	border-bottom-width: 2px;
+	border-radius: 3px;
+	background-color: #FFF;
+	margin: 30px auto;
+	
+	h1 {
+		height: 60px;
+		text-align: center;
+		background-color: $colorTeal;
+		line-height: 60px;
+		font-size: 20px;
+		font-weight: bold;
+		color: #FFF;
+	}
+	
+	form {
+		padding: 20px;
+		color: #6C6D6F;
+		font-size: 14px;
+		overflow: hidden;
+	}
+	
+	.errors {
+		margin-bottom: 20px;
+		color: $colorTeal;
+		font-style: italic;
+		font-size: 14px;
+		line-height: 20px;
+		
+		li {
+			list-style: disc inside;
+		}
+	}
+	
+	label {
+		line-height: 20px;
+		margin-bottom: 2px;
+		display: block;
+	}
+	
+	input[type="text"] {
+		@include transition(all 250ms);
+		
+		border: 0;
+		border-bottom: 1px solid #B9B9B9;
+		height: 20px;
+		line-height: 20px;
+		background-color: transparent;
+		
+		&:focus {
+			color: $colorTeal;
+			border-color: $colorTeal;
+		}
+	}
+	
+	input[type="text"],
+	select {
+		width: 340px;
+		margin-bottom: 8px;
+	}
+	
+	button {
+		@include transition(all 250ms);
+		
+		float: right;
+		border: 1px solid $colorTeal;
+		color: $colorTeal;
+		background-color: transparent;
+		height: 28px;
+		padding: 0 8px;
+		margin-top: 20px;
+		min-width: 120px;
+		
+		&:hover,
+		&:active,
+		&:focus {
+			color: #FFF;
+			background-color: $colorTeal;
+		}
+	}
+}
