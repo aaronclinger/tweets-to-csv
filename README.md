@@ -1,6 +1,6 @@
 # Tweets to CSV
 
-“Tweets to CSV” is a PHP web-based utility for creating a CSV file from a Twitter user’s timeline.
+“Tweets to CSV” is a PHP web-based utility for creating a CSV file from a Twitter user’s timeline or mentions.
 
 Here is what it looks like in a browser:
 

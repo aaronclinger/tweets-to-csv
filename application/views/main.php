@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<title>Tweets to CSV</title>
-		<meta name="description" content="An utility for creating a CSV file from a Twitter user&rsquo;s timeline.">
+		<meta name="description" content="An utility for creating a CSV file from a Twitter user&rsquo;s timeline or mentions.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 		<meta name="robots" content="noindex">
 		<link rel="stylesheet" href="/assets/css/styles.css" type="text/css">
@@ -27,10 +27,17 @@
 					<dl>
 						<dt><label for="username">Twitter Username:</label></dt>
 							<dd><input type="text" name="username" id="username" value="<?=set_value('username', '@');?>"></dd>
+						<dt><label for="data_type">Source:</label></dt>
+							<dd>
+								<select id="data_type" name="data_type">
+									<option value="timeline" <?=set_select('data_type', 'timeline', TRUE);?>>User Timeline</option>
+									<option value="mentions" <?=set_select('data_type', 'mentions');?>>User Mentions</option>
+								</select>
+							</dd>
 						<dt><label for="total">Total Tweets:</label></dt>
 							<dd>
 								<select id="total" name="total">
-									<option value="1000000" <?=set_select('total', 'All');?>>All</option>
+									<option value="2000" <?=set_select('total', '2000');?>>2000</option>
 									<option value="1000" <?=set_select('total', '1000');?>>1000</option>
 									<option value="500" <?=set_select('total', '500');?>>500</option>
 									<option value="400" <?=set_select('total', '400', TRUE);?>>400</option>

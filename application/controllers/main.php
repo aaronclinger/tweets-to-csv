@@ -7,20 +7,21 @@ class Main extends CI_Controller {
 		$this->load->library('form_validation');
 		
 		$this->form_validation->set_rules('username', 'username', 'required|trim|callback__is_twitter_username');
+		$this->form_validation->set_rules('data_type', 'data_type', 'required|trim');
 		$this->form_validation->set_rules('total', 'total', 'required|trim|is_natural_no_zero');
 		
 		if ($this->form_validation->run())
 		{
 			$this->load->model('twitter_model');
 			
-			$tweets = $this->twitter_model->fetch_tweets(array('twitter_username' => $this->input->post('username'), 'total' => intval($this->input->post('total'))));
+			$tweets = $this->twitter_model->fetch_tweets(array('screen_name' => $this->input->post('username'), 'data_type' => $this->input->post('data_type'), 'total' => intval($this->input->post('total'))));
 			
 			if ( ! empty($tweets))
 			{
 				$this->output->set_content_type('text/csv; charset=utf-8');
 				$this->output->set_header('Content-Disposition: attachment; filename=tweets.csv');
 				
-				$csv = "\"Tweet ID\",\"Tweet Text\",\"Retweets\",\"Favorites\",\"Date\"\r";
+				$csv = "\"Username\",\"Tweet ID\",\"Tweet Text\",\"Retweets\",\"Favorites\",\"Date\"\r";
 				
 				foreach ($tweets as $tweet)
 				{
